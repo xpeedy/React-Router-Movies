@@ -12,14 +12,14 @@ export default function Movie(props) {
   useEffect(() => {
     axios
       .get(`http://localhost:5000/api/movies/${id}`) // Study this endpoint with Postman
-      .then(response => {
-        console.log(response)
+      .then(res => {
+        console.log(res)
         // Study this response with a breakpoint or log statements
         // and set the response data as the 'movie' slice of state
-        setMovie(response.data);
+        setMovie(res.data);
       })
-      .catch(error => {
-        console.error(error);
+      .catch(err => {
+        console.error(err);
       });
     // This effect should run every time time
     // the `id` changes... How could we do this?
